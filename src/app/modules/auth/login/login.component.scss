@@ -1,0 +1,106 @@
+.container {
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  margin: auto;
+  padding: 16px;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.logo-container {
+  background: #001b30;
+  height: 20vh;
+  width: 100%;
+}
+
+.logo {
+  margin: auto;
+  display: block;
+  padding-top: 50px;
+}
+
+.mat-form-field-infix .mat-form-field-label-wrapper {
+  top: -34px;
+  left: -27px;
+}
+
+.page-heading {
+  margin: 32px auto;
+  text-align: center;
+}
+.page-heading h3 {
+  font-family: Maven Pro;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 47px;
+  letter-spacing: 0em;
+}
+
+.page-heading h5 {
+  font-family: Maven Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.password-eye {
+  font-size: 25px !important;
+  color: #bbbbbb;
+}
+
+input {
+  font-family: Maven Pro;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #aaaaaa;
+  padding-left: 10px;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: #dbdbdb;
+}
+
+.login-button {
+  border-radius: 25px;
+  background-color: #001b30;
+  color: #ffffff;
+  height: 50px;
+  width: 184px;
+  font-family: Maven Pro;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+}
+
+.form-label {
+  font-family: Maven Pro;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+@media (max-width: 481px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80vw;
+  }
+}

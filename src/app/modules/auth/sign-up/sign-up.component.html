@@ -1,0 +1,39 @@
+<div class="container">
+    <mat-card class="card">
+
+        <mat-form-field >
+            <mat-label>FIRST NAME</mat-label>
+            <input matInput type="text" [formControl]="registerForm.controls.firstName" required
+                autocomplete="off" />
+            <!-- <mat-error *ngIf="this.registerForm.controls.firstName.invalid">Invalid Value</mat-error> -->
+        </mat-form-field>
+
+
+        <mat-form-field >
+            <mat-label>LAST NAME</mat-label>
+            <input matInput type="text" [formControl]="registerForm.controls.lastName" required
+                autocomplete="off" />
+            <!-- <mat-error *ngIf="this.registerForm.controls.lastName.invalid">Invalid Value</mat-error> -->
+        </mat-form-field>
+
+
+        <mat-form-field >
+            <mat-label>EMAIL</mat-label>
+            <input matInput type="text" [formControl]="registerForm.controls.email" required
+                autocomplete="off" />
+            <!-- <mat-error *ngIf="this.registerForm.controls.email.invalid">Invalid Value</mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field >
+            <mat-label>PASSWORD</mat-label>
+            <input matInput type="password" [formControl]="registerForm.controls.password" required
+                autocomplete="off" />
+            <!-- <mat-error *ngIf="this.registerForm.controls.password.invalid">Invalid Value</mat-error> -->
+        </mat-form-field>
+        <mat-card-actions class="button-wrapper">
+            <button mat-flat-button color="primary" (click)="login()">
+                Submit
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>
