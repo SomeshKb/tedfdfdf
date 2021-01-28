@@ -32,13 +32,15 @@ table {
 
 .list{
   border-radius: 4px;
+  box-shadow: 0px 0px 8px rgba(201, 201, 201, 0.25);
 } 
 
-.breadcrumb {
+.breadcrumb-title {
   border-radius: 4px;
-  margin-bottom: 15px;
+  margin-bottom: 15px;  
+  box-shadow: 0px 0px 8px rgba(201, 201, 201, 0.25);
 }
-.breadcrumb p {
+.breadcrumb-title p {
   font-family: Maven Pro;
   font-style: normal;
   font-weight: bold;

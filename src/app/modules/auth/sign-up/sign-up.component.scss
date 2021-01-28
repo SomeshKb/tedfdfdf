@@ -1,4 +1,4 @@
-.container {
+.signup-container {
     width: 100%;
     background: #fff;
     display: flex;
@@ -7,7 +7,7 @@
     align-items: center;
   }
   
-  .card {
+  .card-view {
     display: grid;
     grid-template-columns: 40% 40%;
     grid-gap: 5%;
@@ -17,7 +17,7 @@
     padding: 16px;
     box-shadow: none;
   }
-  .form-control{
+  .form-items{
       display: flex;
       flex-direction: column;
   }
@@ -25,18 +25,7 @@
     display: flex;
     justify-content: center;
   }
-  .logo-container {
-    background: #001b30;
-    height: 20vh;
-    width: 100%;
-  }
-  
-  .logo {
-    margin: auto;
-    display: block;
-    padding-top: 50px;
-  }
-  
+
   .mat-form-field-infix .mat-form-field-label-wrapper {
     top: -34px;
     left: -27px;
@@ -84,26 +73,13 @@
     background-color: #dbdbdb;
   }
   
-  .login-button {
-    border-radius: 25px;
-    background-color: #001b30;
-    color: #ffffff;
-    height: 50px;
-    width: 184px;
-    font-family: Maven Pro;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 24px;
-    letter-spacing: 0em;
-  }
-  
   .form-label {
     font-family: Maven Pro;
     font-style: normal;
     font-weight: 500;
     font-size: 15px;
     line-height: 18px;
+    margin-top: 10px;
   }
   .link-text {
       margin-top: 30px;
@@ -113,7 +89,7 @@
   }
   
   @media (max-width: 481px) {
-    .card {
+    .card-view {
       display: flex;
       flex-direction: column;
       justify-content: center;

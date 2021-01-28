@@ -31,3 +31,12 @@
     display: block;
     padding-top: 10px;
   }
+  .layout-content{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .layout{
+    width: 100%;
+    height: 100%;
+  }

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="login-container">
     
     <section class="logo-container">
         <img class="logo" src="assets/png/logo.png" alt="">
@@ -7,7 +7,7 @@
         <h3>Sign In</h3>
         <h5>Start Using the app</h5>
     </section>
-    <div class="card">
+    <div class="card-view">
         <mat-label  class="form-label">Enter Email</mat-label>
             <mat-form-field  floatLabel="always">
                 <span matPrefix><img src="assets/svg/mail.svg" alt=""></span>
@@ -31,7 +31,7 @@
 
         
             <div class="button-wrapper">
-                <button mat-flat-button class="login-button" (click)="login()">
+                <button  class="submit-button" (click)="login()">
                     Sign In
                 </button>
                 <h5 [routerLink]="['/signup']" class="link-text" routerLinkActive="router-link-active"  >Not a member? Sign Up</h5>

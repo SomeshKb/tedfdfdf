@@ -1,5 +1,8 @@
-    <mat-card class="card">
-        <mat-form-field class="form-title">
+<div class="breadcrumb-title">
+  <p> Add new Moment</p>
+</div>
+<mat-card class="card-view">
+        <mat-form-field class="form-tag">
             <mat-label class="form-label">Title</mat-label>
             <input matInput type="text" [formControl]="this.momentForm.controls.title" required autocomplete="off" />
             <mat-error *ngIf="this.momentForm.controls.title.invalid">Invalid Value</mat-error>
@@ -10,7 +13,7 @@
 
         <mat-form-field class="form-tag">
             <mat-label>Tags</mat-label>
-            <mat-chip-list #chipList aria-label="Fruit selection">
+            <mat-chip-list #chipList aria-label="Tag selection">
               <mat-chip *ngFor="let tag of tags" [selectable]="selectable"
                        [removable]="removable" (removed)="remove(tag)">
                 {{tag}}
@@ -24,7 +27,7 @@
             </mat-chip-list>
           </mat-form-field>
 
-        <mat-form-field  >
+        <mat-form-field class="form-tag" >
             <mat-label class="form-label">Description</mat-label>
             <input matInput [formControl]="this.momentForm.controls.description" required />
             <mat-error *ngIf="this.momentForm.controls.description.invalid">Invalid Value</mat-error>
@@ -43,7 +46,7 @@
      
 </mat-card>
 <div class="button-wrapper">
-    <button class="submit-button"  mat-flat-button class="login-button" (click)="submit()" >
+    <button class="submit-button" (click)="submit()" >
         Submit
     </button>
 </div>

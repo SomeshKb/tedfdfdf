@@ -13,6 +13,7 @@ export class AppComponent {
   userLoggedIn = false;
   showLoader = false;
   message;
+  toggleNav = false;
   constructor(private authService: AuthService, private messageService: MessageService, private loader: LoaderService,) {
     this.authService.userLogged.subscribe((res) => {
       this.userLoggedIn = res;
@@ -25,5 +26,9 @@ export class AppComponent {
       this.showLoader = res;
       console.log(this.showLoader,'load')
     });
+  }
+
+  toggleSidebar(){
+    this.toggleNav = !this.toggleNav;
   }
 }

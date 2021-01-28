@@ -1,4 +1,7 @@
-<mat-card class="card"  *ngIf="momentForm">
+<div class="breadcrumb-title">
+  <p> Add new Moment</p>
+</div>
+<mat-card class="card-view"  *ngIf="momentForm">
     <mat-form-field class="form-title">
         <mat-label class="form-label">Title</mat-label>
         <input matInput type="text" [formControl]="this.momentForm.controls.title" required autocomplete="off" />
@@ -24,7 +27,7 @@
         </mat-chip-list>
       </mat-form-field>
 
-    <mat-form-field  >
+    <mat-form-field class="form-tag"  >
         <mat-label class="form-label">Description</mat-label>
         <input matInput [formControl]="this.momentForm.controls.description" required />
         <mat-error *ngIf="this.momentForm.controls.description.invalid">Invalid Value</mat-error>

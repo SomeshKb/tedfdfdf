@@ -3,18 +3,56 @@
 // html, body { height: 100%; }
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-
-.loading {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8) !important;
-    z-index: 11111;
-    top: 0;
-    left: 0;
+html,
+body {
+  height: 100vh;
+}
+body {
+  margin: 0;
+  font-family: Maven Pro;
 }
 
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
 
+.message-component {
+  position: absolute;
+  width: 100vw;
+}
+
+.nav-toggle {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.show-sidebar {
+  display: none !important;
+}
+
+.submit-button {
+  border-radius: 25px;
+  background-color: #001b30;
+  color: #ffffff;
+  height: 50px;
+  width: 184px;
+  font-family: Maven Pro;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+}
+.logo-container {
+  background: #001b30;
+  height: 20vh;
+  width: 100%;
+}
+
+.logo {
+  margin: 0px auto;
+  display: block;
+  position: relative;
+  top: 25%;
+  width: 104.7px;
+height: 93.86px;
+}

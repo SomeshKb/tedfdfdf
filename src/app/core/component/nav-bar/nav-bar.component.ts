@@ -7,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  fillerNav=['test']
-  constructor() { }
+    constructor() { }
 
   ngOnInit(): void {
   }
