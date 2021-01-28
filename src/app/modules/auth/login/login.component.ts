@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Service } from 'src/app/core/models/Service.model';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { HttpService } from 'src/app/core/services/http.service';
+import { MessageService } from 'src/app/core/services/message.service';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private httpService: HttpService,
     private router:Router,
+    private messageService:MessageService,
     private authService: AuthService
   ) {}
 
@@ -41,6 +43,8 @@ export class LoginComponent implements OnInit {
         this.authService.userLogged.next(true);
         localStorage.setItem('userData',JSON.stringify(res.data));
         this.router.navigateByUrl('/moment');
+      },err=>{
+        this.messageService.showError('Invalid Username Password')
       });
     }
   }

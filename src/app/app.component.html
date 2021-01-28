@@ -13,7 +13,10 @@
           <div class="sidenav-content" [ngClass]="{'show-sidebar-toggle': userLoggedIn}" >
             <button mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
           </div>
+          <app-message [message]=message></app-message>
   
-   <router-outlet></router-outlet>
+   <router-outlet>
+    <span [hidden]="!showLoader" class="loading"></span>
+   </router-outlet>
 
   </mat-drawer-container>

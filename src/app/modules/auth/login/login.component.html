@@ -1,7 +1,7 @@
 <div class="container">
     
     <section class="logo-container">
-        <img class="logo" src="assets/svg/logo.png" alt="">
+        <img class="logo" src="assets/png/logo.png" alt="">
     </section>
     <section class="page-heading">
         <h3>Sign In</h3>
@@ -34,6 +34,8 @@
                 <button mat-flat-button class="login-button" (click)="login()">
                     Sign In
                 </button>
+                <h5 [routerLink]="['/signup']" class="link-text" routerLinkActive="router-link-active"  >Not a member? Sign Up</h5>
+
         </div>
     </div>
 </div>

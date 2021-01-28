@@ -11,6 +11,11 @@ export class URLConstant{
     constructor() {
         this.applicationApiUrl['LOGIN'] = this.apiURL + 'auth/login';
         this.applicationApiUrl['GET_MOMENTS'] = this.apiURL + 'moment';
+        this.applicationApiUrl['CREATE_MOMENTS'] = this.apiURL + 'moment/create';
+        this.applicationApiUrl['UPDATE_MOMENTS'] = this.apiURL + 'moment/update/{id}';
+        this.applicationApiUrl['GET_SINGLE_MOMENTS'] = this.apiURL + 'moment/{id}';
+        this.applicationApiUrl['DELETE_MOMENTS'] = this.apiURL + 'moment/{id}';
+
 
     }
 

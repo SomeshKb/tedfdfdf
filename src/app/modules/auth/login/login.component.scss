@@ -96,6 +96,20 @@ input {
   line-height: 18px;
 }
 
+.button-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+.link-text {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #545454;
+}
+
+
 @media (max-width: 481px) {
   .card {
     display: flex;

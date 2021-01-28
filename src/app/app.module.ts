@@ -9,9 +9,10 @@ import { URLConstant } from './core/services/URLconstant';
 import { AuthGuardService } from './core/services/auth-guard.service';
 import { InterceptorService } from './core/services/interceptor.service';
 import { MaterialModule } from './material/material.module';
+import { MessageComponent } from './shared/component/message/message.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,MessageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

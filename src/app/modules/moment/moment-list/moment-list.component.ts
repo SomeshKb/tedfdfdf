@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { HttpService } from 'src/app/core/services/http.service';
 
 @Component({
@@ -16,9 +17,9 @@ export class MomentListComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   dataSource = null
-  displayedColumns: string[] = ['title','tags','titlse'];
+  displayedColumns: string[] = ['SrNo','title','Image','tags','Action'];
 
-  constructor(private httpService : HttpService) { }
+  constructor(private httpService : HttpService,private router:Router) { }
 
   ngOnInit(): void {
     this.getEventList();
@@ -36,6 +37,17 @@ export class MomentListComponent implements OnInit {
 
   onRowClicked(item){
     console.log(item)
+  }
+
+  editMoment(element){
+    this.router.navigateByUrl('moment/edit/'+element._id);
+  }
+
+  
+  deleteMoment(element){
+    // this.httpService.apiDelete().subscribe(res=>{
+
+    // });
   }
 
 }

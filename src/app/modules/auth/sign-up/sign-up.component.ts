@@ -9,7 +9,7 @@ import { HttpService } from 'src/app/core/services/http.service';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
-
+  hide=true;
   registerForm: FormGroup = null;
   constructor(
     private formBuilder: FormBuilder,

@@ -20,7 +20,7 @@ export class AuthGuardService implements CanActivate, CanDeactivate<ComponentCan
     console.log(routePath)
       if (!this.loginService.isAuthenticated()) {
           // this.loginService.logOut();
-          if (routePath !== '/login' && routePath !== '/signup') {
+          if (routePath != '/login' && routePath != '/signup') {
               this.router.navigateByUrl('/login');
               return false;
           }

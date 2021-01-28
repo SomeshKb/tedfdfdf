@@ -1,0 +1,51 @@
+    <mat-card class="card">
+        <mat-form-field class="form-title">
+            <mat-label class="form-label">Title</mat-label>
+            <input matInput type="text" [formControl]="this.momentForm.controls.title" required autocomplete="off" />
+            <mat-error *ngIf="this.momentForm.controls.title.invalid">Invalid Value</mat-error>
+        </mat-form-field>
+<div class="tag-container">
+        <div class="tag-img-container" >
+
+
+        <mat-form-field class="form-tag">
+            <mat-label>Tags</mat-label>
+            <mat-chip-list #chipList aria-label="Fruit selection">
+              <mat-chip *ngFor="let tag of tags" [selectable]="selectable"
+                       [removable]="removable" (removed)="remove(tag)">
+                {{tag}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input placeholder="New tag..."
+                     [matChipInputFor]="chipList"
+                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                     [matChipInputAddOnBlur]="addOnBlur"
+                     (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+          </mat-form-field>
+
+        <mat-form-field  >
+            <mat-label class="form-label">Description</mat-label>
+            <input matInput [formControl]="this.momentForm.controls.description" required />
+            <mat-error *ngIf="this.momentForm.controls.description.invalid">Invalid Value</mat-error>
+        </mat-form-field>
+        </div>
+
+          <div class="file-container" appDnd (fileDropped)="onFileDropped($event)" (click)="fileDropRef.click()">
+            <input type="file" #fileDropRef class="file-input" id="fileDropRef" (change)="onFileSelected($event.target.files)" />
+            <img class="upload-img" src="assets/svg/upload.svg">
+            <p class="drag-text">Drag and Drop</p>
+            <h3>OR</h3>
+            <label class="file-button">Browse</label>
+
+          </div>
+        </div>
+     
+</mat-card>
+<div class="button-wrapper">
+    <button class="submit-button"  mat-flat-button class="login-button" (click)="submit()" >
+        Submit
+    </button>
+</div>
+
+

@@ -1,75 +1,93 @@
 mat-toolbar {
-    justify-content: space-between;
-  }
-  .content {
-    padding: 16px;
-  }
-  .content > mat-card {
-    margin-bottom: 16px;
-  }
-  
-  .card {
-    cursor: pointer;
-    box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06),
-      1px 3px 8px rgba(39, 44, 49, 0.03);
-    transition: all 0.5s ease; /* back to normal */
-  }
-  
-  .card:hover {
-      transform: translate3D(0,-1px,0) scale(1.03);
-  }
-  
+  justify-content: space-between;
+}
+.content {
+  padding: 16px;
+}
+.content > mat-card {
+  margin-bottom: 16px;
+}
 
-  table {
-    width: 100%;
-  }
-  
-  
-  @media (min-width: 1281px) {
-    
-    /* CSS */
-    
-  }
-  
-  /* 
+.card {
+  cursor: pointer;
+  box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06),
+    1px 3px 8px rgba(39, 44, 49, 0.03);
+  transition: all 0.5s ease; /* back to normal */
+}
+
+.card:hover {
+  transform: translate3D(0, -1px, 0) scale(1.03);
+}
+
+table {
+  width: 100%;
+}
+
+.moment-img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 1px;
+}
+
+.list{
+  border-radius: 4px;
+} 
+
+.breadcrumb {
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+.breadcrumb p {
+  font-family: Maven Pro;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  color: #001b30;
+  padding: 15px;
+}
+
+@media (min-width: 1281px) {
+  /* CSS */
+}
+
+/* 
     ##Device = Laptops, Desktops
     ##Screen = B/w 1025px to 1280px
   */
-  
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    
-  }
-  
-  /* 
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+}
+
+/* 
     ##Device = Tablets, Ipads (portrait)
     ##Screen = B/w 768px to 1024px
   */
-  
-  @media (min-width: 768px) and (max-width: 1024px) {
-  }
-  
-  /* 
+
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* 
     ##Device = Tablets, Ipads (landscape)
     ##Screen = B/w 768px to 1024px
   */
-  
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  }
-  
-  /* 
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+}
+
+/* 
     ##Device = Low Resolution Tablets, Mobiles (Landscape)
     ##Screen = B/w 481px to 767px
   */
-  
-  @media (min-width: 481px) and (max-width: 767px) {
-    
-  }
-  
-  /* 
+
+@media (min-width: 481px) and (max-width: 767px) {
+}
+
+/* 
     ##Device = Most of the Smartphones Mobiles (Portrait)
     ##Screen = B/w 320px to 479px
   */
-  
-  @media (min-width: 320px) and (max-width: 480px) {
 
-  }
+@media (min-width: 320px) and (max-width: 480px) {
+}

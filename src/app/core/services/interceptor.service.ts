@@ -1,12 +1,7 @@
-import {
-  HttpInterceptor,
-  HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpHeaders,
-} from '@angular/common/http';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpHeaders, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators'
 export const InterceptorSkipHeader = 'X-Skip-Interceptor';
 
 @Injectable({
@@ -17,10 +12,11 @@ export class InterceptorService implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
+    let request = null;
     if (req.headers.has(InterceptorSkipHeader)) {
-      
+
       const headers = req.headers.delete(InterceptorSkipHeader);
-      return next.handle(req.clone({ headers }));
+      request = next.handle(req.clone({ headers }));
 
     } else {
 
@@ -34,7 +30,21 @@ export class InterceptorService implements HttpInterceptor {
 
       console.log('Intercepted HTTP call', authReq);
 
-      return next.handle(authReq);
+      request = next.handle(authReq);
     }
+    // return request
+
+
+    return request.pipe(
+      map((event: HttpEvent<any>) => {
+        if (event instanceof HttpResponse) {
+          console.log('event--->>>', event);
+        }
+        return event;
+      }),
+      catchError((error: HttpErrorResponse) => {
+        console.log('error--->>>', error);
+        return throwError(error);
+      }));
   }
 }

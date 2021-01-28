@@ -1,39 +1,62 @@
+
 <div class="container">
+    
+    <section class="logo-container">
+        <img class="logo" src="assets/png/logo.png" alt="">
+    </section>
+    <section class="page-heading">
+        <h3>Sign Up</h3>
+        <h5>To Be a Member</h5>
+    </section>
     <mat-card class="card">
 
-        <mat-form-field >
+        <div class="form-control">
             <mat-label>FIRST NAME</mat-label>
-            <input matInput type="text" [formControl]="registerForm.controls.firstName" required
-                autocomplete="off" />
-            <!-- <mat-error *ngIf="this.registerForm.controls.firstName.invalid">Invalid Value</mat-error> -->
-        </mat-form-field>
-
-
+            <mat-form-field >
+                <span matPrefix><img src="assets/svg/account.svg" alt=""></span>
+                <input matInput type="text" [formControl]="registerForm.controls.firstName" required
+                    autocomplete="off" />
+                <mat-error *ngIf="this.registerForm.controls.firstName.invalid">Invalid Value</mat-error>
+            </mat-form-field>
+            </div>
+            <div class="form-control">
+        <mat-label>LAST NAME</mat-label>
         <mat-form-field >
-            <mat-label>LAST NAME</mat-label>
+            <span matPrefix><img src="assets/svg/account.svg" alt=""></span>
             <input matInput type="text" [formControl]="registerForm.controls.lastName" required
                 autocomplete="off" />
-            <!-- <mat-error *ngIf="this.registerForm.controls.lastName.invalid">Invalid Value</mat-error> -->
+            <mat-error *ngIf="this.registerForm.controls.lastName.invalid">Invalid Value</mat-error>
         </mat-form-field>
-
-
+    </div>
+    <div class="form-control">
+        <mat-label>EMAIL</mat-label>
         <mat-form-field >
-            <mat-label>EMAIL</mat-label>
-            <input matInput type="text" [formControl]="registerForm.controls.email" required
+            <span matPrefix><img src="assets/svg/mail.svg" alt=""></span>
+            <input matInput type="email" [formControl]="registerForm.controls.email" required
                 autocomplete="off" />
-            <!-- <mat-error *ngIf="this.registerForm.controls.email.invalid">Invalid Value</mat-error> -->
+            <mat-error *ngIf="this.registerForm.controls.email.invalid">Invalid Value</mat-error>
         </mat-form-field>
-
+    </div>
+    <div class="form-control">
+        <mat-label>PASSWORD</mat-label>
         <mat-form-field >
-            <mat-label>PASSWORD</mat-label>
-            <input matInput type="password" [formControl]="registerForm.controls.password" required
-                autocomplete="off" />
-            <!-- <mat-error *ngIf="this.registerForm.controls.password.invalid">Invalid Value</mat-error> -->
-        </mat-form-field>
-        <mat-card-actions class="button-wrapper">
-            <button mat-flat-button color="primary" (click)="login()">
-                Submit
+
+            <span matPrefix><img src="assets/svg/password.svg" alt=""></span>
+            <input matInput [type]="hide ? 'password' : 'text'" [formControl]="this.registerForm.controls.password" required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon  class="password-eye">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
-        </mat-card-actions>
+            <mat-error *ngIf="this.registerForm.controls.password.invalid">Invalid Value</mat-error>
+
+
+        </mat-form-field>
+    </div>
+    
     </mat-card>
+
+        <button mat-flat-button class="login-button" (click)="login()">
+            Submit
+        </button>
+        <h5 [routerLink]="['/login']" class="link-text" routerLinkActive="router-link-active"  >Already a member? Sign In</h5>
+
 </div>

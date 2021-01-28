@@ -50,23 +50,23 @@ export class HttpService {
     return this.http.post<any>(url, params.requestBody, options);
   }
 
-  apiPostWithUpload(urlKey, formData, fileName = null, fileData = null) {
+  apiPostWithUpload(urlKey, params,skipInterceptor = false) {
+    // url = this.apiUrlConstant.getApiUrl(urlKey);
+
+    // return this.http.post<any>(url, formData);
+
+
     let url;
     let options;
-
-    url = this.apiUrlConstant.getApiUrl(urlKey);
-    let payload = new FormData();
-
-    for (var key in formData) {
-      if (formData.hasOwnProperty(key)) {
-        payload.append(key, formData[key]);
-      }
+    if (params) {
+      url = this.apiUrlConstant.getApiUrl(urlKey, params.dynamicUrlParams);
+      options = this.appendParams(params.queryParams, skipInterceptor);
+    } else {
+      url = this.apiUrlConstant.getApiUrl(urlKey);
     }
-    if (fileName && fileData) {
-      let fileToUpload = fileData.item(0);
-      payload.append(fileName, fileToUpload, fileToUpload.name);
-    }
-    return this.http.post<any>(url, payload);
+    return this.http.put<any>(url, params.requestBody, options);
+
+
   }
 
   apiPut(urlKey, params: Service, skipInterceptor = false) {

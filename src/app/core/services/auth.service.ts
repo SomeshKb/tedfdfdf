@@ -13,4 +13,9 @@ export class AuthService {
   isAuthenticated(): boolean {
     return localStorage.getItem('userData') ? true : false;
   }
+
+  logOutUser(){
+    localStorage.clear();
+    this.userLogged.next(false);
+  }
 }
