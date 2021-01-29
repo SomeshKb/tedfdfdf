@@ -1,6 +1,5 @@
-
 <div class="signup-container">
-    
+
     <section class="logo-container">
         <img class="logo" src="assets/png/logo.png" alt="">
     </section>
@@ -12,51 +11,61 @@
 
         <div class="form-items">
             <mat-label>FIRST NAME</mat-label>
-            <mat-form-field >
+            <mat-form-field>
                 <span matPrefix><img src="assets/svg/account.svg" alt=""></span>
                 <input matInput type="text" [formControl]="registerForm.controls.firstName" required
                     autocomplete="off" />
+                    <mat-icon matSuffix matTooltip="Alpha" >info</mat-icon>
                 <mat-error *ngIf="this.registerForm.controls.firstName.invalid">Invalid Value</mat-error>
             </mat-form-field>
-            </div>
-            <div class="form-items">
-        <mat-label>LAST NAME</mat-label>
-        <mat-form-field >
-            <span matPrefix><img src="assets/svg/account.svg" alt=""></span>
-            <input matInput type="text" [formControl]="registerForm.controls.lastName" required
-                autocomplete="off" />
-            <mat-error *ngIf="this.registerForm.controls.lastName.invalid">Invalid Value</mat-error>
-        </mat-form-field>
-    </div>
-    <div class="form-items">
-        <mat-label>EMAIL</mat-label>
-        <mat-form-field >
-            <span matPrefix><img src="assets/svg/mail.svg" alt=""></span>
-            <input matInput type="email" [formControl]="registerForm.controls.email" required
-                autocomplete="off" />
-            <mat-error *ngIf="this.registerForm.controls.email.invalid">Invalid Value</mat-error>
-        </mat-form-field>
-    </div>
-    <div class="form-items">
-        <mat-label>PASSWORD</mat-label>
-        <mat-form-field >
+        </div>
+        <div class="form-items">
+            <mat-label>LAST NAME</mat-label>
+            <mat-form-field>
+                <span matPrefix><img src="assets/svg/account.svg" alt=""></span>
+                <input matInput type="text" [formControl]="registerForm.controls.lastName" required
+                    autocomplete="off" />
+                    <mat-icon matSuffix matTooltip="Alpha" >info</mat-icon>
+                <mat-error *ngIf="this.registerForm.controls.lastName.invalid">Invalid Value</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-items">
+            <mat-label>EMAIL</mat-label>
+            <mat-form-field>
+                <span matPrefix><img src="assets/svg/mail.svg" alt=""></span>
+                <input matInput type="email" [formControl]="registerForm.controls.email" required autocomplete="off"
+                    (change)="getData($event)" />
 
-            <span matPrefix><img src="assets/svg/password.svg" alt=""></span>
-            <input matInput [type]="hide ? 'password' : 'text'" [formControl]="this.registerForm.controls.password" required>
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon  class="password-eye">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-            <mat-error *ngIf="this.registerForm.controls.password.invalid">Invalid Value</mat-error>
+                <mat-icon matSuffix matTooltip="Should be a valid email format" >info</mat-icon>
 
 
-        </mat-form-field>
-    </div>
-    
+                <mat-error *ngIf="this.registerForm.controls.email.invalid">Invalid Value</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-items">
+            <mat-label>PASSWORD</mat-label>
+            <mat-form-field>
+
+                <span matPrefix><img src="assets/svg/password.svg" alt=""></span>
+                <input matInput [type]="hide ? 'password' : 'text'" [formControl]="this.registerForm.controls.password"
+                    required>
+                <mat-icon matSuffix
+                    matTooltip="Should have at least 8 character with a Uppercase, Lowercase, special character and a digit"
+                   >info</mat-icon>
+
+                    <mat-icon class="password-eye" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+                <mat-error *ngIf="this.registerForm.controls.password.invalid">Invalid Value</mat-error>
+
+
+            </mat-form-field>
+        </div>
+
     </mat-card>
 
-        <button  class="submit-button" (click)="login()">
-            Submit
-        </button>
-        <h5 [routerLink]="['/login']" class="link-text" routerLinkActive="router-link-active"  >Already a member? Sign In</h5>
+    <button class="submit-button" (click)="login()">
+        Submit
+    </button>
+    <h5 [routerLink]="['/login']" class="link-text" routerLinkActive="router-link-active">Already a member? Sign In</h5>
 
 </div>

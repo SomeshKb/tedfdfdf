@@ -1,9 +1,11 @@
 .card-view {
-  margin: 15px;
   padding: 60px 60px;
   display: flex;
   flex-direction: column;
   box-shadow: 0px 0px 8px rgba(201, 201, 201, 0.25);
+  max-width: 1000px;
+  margin: auto;
+  margin-bottom: 15px;
 }
 
 .breadcrumb-title {
