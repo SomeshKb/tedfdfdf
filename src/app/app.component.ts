@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AfterContentInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from './core/services/auth.service';
 import { LoaderService } from './core/services/loader.service';
 import { MessageService } from './core/services/message.service';
@@ -8,13 +9,13 @@ import { MessageService } from './core/services/message.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements AfterContentInit {
   title = 'Moment';
   userLoggedIn = false;
   showLoader = false;
   message;
   toggleNav = false;
-  constructor(private authService: AuthService, private messageService: MessageService, private loader: LoaderService,) {
+  constructor(private authService: AuthService, private messageService: MessageService, private loader: LoaderService, private cdref: ChangeDetectorRef) {
     this.authService.userLogged.subscribe((res) => {
       this.userLoggedIn = res;
     });
@@ -22,13 +23,16 @@ export class AppComponent {
     this.messageService.getMessage().subscribe(message => {
       this.message = message;
     });
+
+  }
+  ngAfterContentInit(): void {
     this.loader.status.subscribe(res => {
       this.showLoader = res;
-      console.log(this.showLoader,'load')
+      this.cdref.detectChanges();
     });
   }
 
-  toggleSidebar(){
+  toggleSidebar() {
     this.toggleNav = !this.toggleNav;
   }
 }
