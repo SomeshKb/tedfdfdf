@@ -41,6 +41,14 @@
     height: 100%;
   }
 
-  .isLoader{
-
+  .nav.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
+  mat-icon.mat-icon.notranslate.acount.material-icons.mat-icon-no-color {
+    margin-top: 10px;
+    margin-right: 25px;
+    font-size: 35px;
+    color: #00a7c7;
+}

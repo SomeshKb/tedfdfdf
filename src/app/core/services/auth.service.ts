@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -8,7 +9,7 @@ export class AuthService {
 
   public userLogged: BehaviorSubject<boolean> = new BehaviorSubject(this.isAuthenticated());
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   isAuthenticated(): boolean {
     return localStorage.getItem('userData') ? true : false;
@@ -17,5 +18,6 @@ export class AuthService {
   logOutUser(){
     localStorage.clear();
     this.userLogged.next(false);
+    this.router.navigateByUrl('/login')
   }
 }

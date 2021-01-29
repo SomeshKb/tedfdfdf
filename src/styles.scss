@@ -96,3 +96,21 @@ mat-icon{
   top: 0;
   bottom: 0;
 }
+
+.dialog-container{
+display: flex;
+flex-flow: column;
+justify-content: center;
+align-items: center;
+padding: 20px;
+min-width: 200px;
+}
+
+.dialog-title{
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.dialog-actions{
+  margin-top: 20px;
+}

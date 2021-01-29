@@ -35,4 +35,8 @@ export class AppComponent implements AfterContentInit {
   toggleSidebar() {
     this.toggleNav = !this.toggleNav;
   }
+
+  logout(){
+    this.authService.logOutUser();
+  }
 }

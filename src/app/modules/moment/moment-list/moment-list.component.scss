@@ -50,6 +50,36 @@ table {
   padding: 15px;
 }
 
+
+
+.dialog-container{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-width: 200px;
+  }
+  
+  .dialog-title{
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #d00000;
+  }
+  
+  .dialog-actions{
+    margin-top: 20px;
+  }
+
+  .dialog-content{
+    font-size: 20px;
+    overflow: hidden;
+  }
+  .dialog-button {
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+  }
 @media (min-width: 1281px) {
   /* CSS */
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -17,16 +18,16 @@ export class MomentListComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   dataSource = null
-  displayedColumns: string[] = ['SrNo','title','Image','tags','Action'];
+  displayedColumns: string[] = ['SrNo', 'title', 'Image', 'tags', 'Action'];
 
-  constructor(private httpService : HttpService,private router:Router) { }
+  constructor(private httpService: HttpService, private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getEventList();
   }
-  
+
   getEventList() {
-    this.httpService.apiGet('GET_MOMENTS').subscribe((res:any)=>{
+    this.httpService.apiGet('GET_MOMENTS').subscribe((res: any) => {
       this.momentList = res.data;
       this.dataSource = new MatTableDataSource<any>(this.momentList);
       this.dataSource.paginator = this.paginator;
@@ -35,19 +36,21 @@ export class MomentListComponent implements OnInit {
     });
   }
 
-  onRowClicked(item){
+  onRowClicked(item) {
     console.log(item)
   }
 
-  editMoment(element){
-    this.router.navigateByUrl('moment/edit/'+element._id);
+  editMoment(element) {
+    this.router.navigateByUrl('moment/edit/' + element._id);
   }
 
-  
-  deleteMoment(element){
-    // this.httpService.apiDelete().subscribe(res=>{
 
-    // });
+  deleteMoment(element) {
+    console.log(element)
+  }
+
+  openDeleteMoment(content, element) {
+    this.dialog.open(content, { data: element });
   }
 
 }
